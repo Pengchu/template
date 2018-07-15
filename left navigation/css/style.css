@@ -1,0 +1,129 @@
+@charset 'utf-8';
+
+/* 左侧导航栏样式 文件 style.css */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+    line-height: 1.40;
+    color: #788188;
+    background-color: transparent;
+}
+
+.shadow {
+    box-shadow: 0 3px 60px rgba(0, 0, 0, .3);
+    border-left: 1px solid #cbd5dd;
+    border-right: 1px solid #cbd5dd;
+}
+
+/* 颜色 */
+.bg-white-only {
+    background-color: #ffffff;
+}
+
+.bg-gray-only {
+    background-color: #f2f4f8;
+}
+.bg-black {
+    background-color: #62778c;
+    color: #ffffff;
+}
+.bg-dark {
+    background-color: #5a6a7a;
+    color: #c9d0d7;
+}
+.text-white-only {
+    color: #ffffff;
+}
+.bg-dark .text-muted {
+    color: #acb7c1 !important;
+}
+
+/* 边距 */
+.m-b-sm {
+    margin-bottom: 10px;
+}
+.m-t {
+    margin-top: 15px;
+}
+.m-t-xm {
+    margin-top: 8px;
+}
+.padder {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 文字 */
+.text-xs {
+    font-size: 12px;
+}
+.text-sm {
+    font-size: 13px;
+}
+
+
+.container {
+    position: relative;
+    padding: 0;
+}
+
+/* header */
+.header.navbar {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    padding: 0;
+    z-index: 1000;
+}
+.header.navbar-fixed-top {
+}
+.header-md {
+    min-height: 60px;
+}
+.header-md .navbar-brand {
+    line-height: 60px;
+}
+.navbar-brand {
+    float: none;
+    display: inline-block;
+    height: auto;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 20px;
+}
+.aside {
+    width: 200px;
+}
+
+/* nav */
+.bg-dark .nav > li > a {
+    color: #d8dde2;
+}
+.nav-primary ul.nav > li > a {
+    padding: 9px 20px;
+    position: relative;
+    -webkit-transition: background-color .2s ease-in-out 0s;
+    transition: background-color .2s ease-in-out 0s;
+}
+.nav-primary li > a > i {
+    margin: -10px -10px;
+    line-height: 38px;
+    width: 38px;
+    float: left;
+    margin-right: -5px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.bg-dark .nav > li > a:hover, .bg-dark .nav > li > a:focus {
+    background-color: #62778c;
+}
+.bg-dark .nav > li.active > a {
+    color: #fff;
+    background-color: #62778c;
+}
