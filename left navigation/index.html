@@ -26,23 +26,25 @@
 
 <body class="bg-gray-only box-layout">
     
-    <div class="container shadow">
+    <div class="container shadow" style="height: 1000%;">
         <header class="header container bg-white-only header-md navbar navbar-fixed-top">
-            <div class="navbar-header aside bg-dark">
-                <a href="index.html" class="navbar-brand text-white-only">
-                    <i class="hide"></i>
-                    <img src="images/logo_white.png" alt="." class="hide">
-                    <span class="">Canvas</span>
-                </a>
-            </div>
-            <div class="navbar-right">
-                
+            <div class="row">
+                <div class="navbar-header bg-dark col-md-3">
+                    <a href="index.html" class="navbar-brand text-white-only">
+                        <i class="hide"></i>
+                        <img src="" alt="." class="hide">
+                        <span class="">Canvas目录</span>
+                    </a>
+                </div>
+                <div class="navbar-right col-md-9">
+                    
+                </div>
             </div>
         </header>
-        <div class="box-main">
+        <div class="box-main row">
             <!-- 左侧导航栏 -->
-            <div class="aside aside-fixed bg-dark">
-                <nav class="nav-primary">
+            <div class="aside col-md-3">
+                <nav class="nav-primary  bg-dark affix">
                     <ul class="nav bg clearfix" data-ride="collapse">
                         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                             Discover
@@ -77,10 +79,18 @@
                     </ul>
                 </nav>
             </div>
+            <!-- 右侧内容部分 -->
+            <div class="content col-md-9">
+                <div class="wrapper">
+                    <div class="header">
+                        <span class="h3 font-thin">内容标题</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
         
-        <!-- 右侧内容部分 -->
+        
     </div>
     <!--  /.container  -->
     

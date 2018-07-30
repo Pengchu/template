@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>开发文档模板</title>
+	
+	<link rel="stylesheet" href="./base.css">
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./page_resource.css">
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body class="zh_CN page_simple">
+	
+	<div id="body" class="page_resource">
+		<div class="ddoc-desktop-layout ddoc-desktop-layout_global">
+			<div class="ddoc-desktop-layout__main">
+				<div class="ddoc-desktop-layout__main__area">
+					<div class="ddoc-desktop-layout__main__inner">
+						<div class="container_box ddoc-desktop-panel cell_layout side_l">
+							<div class="container_hd">
+								<h2>技术文档</h2>
+								<div class="extra_info align_title with_search_clear">
+									<div class="search_box wiki_side">
+										<span class="frm_input_box search with_del append">
+											<a href="javascript:;" id="del_btn" class="del_btn" style="display:none">
+												<i class="icon16_common icon_search_del"></i>
+											</a>
+											<a href="" id="search_btn" class="frm_input_append">
+												<i class="icon20_common search_gray">搜索</i>
+											</a>
+											<input type="text" id="search_text" name maxlength="30" class="frm_input">
+										</span>
+									</div>
+									<div class="search_highlight_opr">                              
+										<a id="close_highline" class="search_clear_btn " title="关闭搜索词高亮" href="javascript:;" style="display: none;">关闭搜索词高亮</a>                              
+										<a id="open_highline" class="search_clear_btn open" title="开启搜索词高亮" href="javascript:;" style="display: block;">开启搜索词高亮</a>                          
+									</div>
+								</div>
+							</div>
+							<div class="container_bd">
+								<div id="col_side" class="col_side">
+									<div class="menu_box_primay">
+										<dl id="resMenu" class="menu_primary">
+											
+										</dl>
+									</div>
+								</div>
+								<div class="col_main">
+									<iframe src="" frameborder="0" class="res_iframe" id="iframe"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="mp-foot">
+		<div class="ddoc-desktop-foot">
+			<div class="ddoc-desktop-foot__info">
+				<div class="ddoc-desktop-links ddoc-desktop-link-group ddoc-desktop-link-group-split">
+					<a href="#" class="ddoc-desktop-link" target="_blank">关于文档</a>
+				</div>
+			</div>
+			<div class="ddoc-desktop-foot__extra">
+				<p class="ddoc-desktop-link">Copyright © 2012-2018 Tencent. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js"></script>
+	<script type="text/html" id="menu_tpl">
+    {{ each data d1 i1 }}
+        {{if d1.children.length>0 && d1.del_flag!=1}}
+        <dt data-leaf="1" class="menu_title_primary closed" tittle="{{d1.name}}">
+            <i class="icon_menu_switch"></i>
+            {{d1.name}}
+        </dt>
+        <dd class="menu_desc_primary" style="display:none;">
+            <dl class="sub_menu_primary">
+            {{each d1.children d2 i2}}
+            {{if d2.children.length==0 && d2.leaf==1 && d2.del_flag!=1}}
+                <dt data-leaf="1" class="sub_menu_title_primary">
+                    <a href="javascript:" data-leaf="1" data-id="{{d2.id}}" data-father="{{d2.father}}" class="menu_link_primary no_sub" title="{{d2.name}}">{{d2.name}}</a>
+                </dt>
+            {{else if d2.children.length>0 && d2.leaf==0 && d2.del_flag!=1}}
+                <dt data-leaf="1" class="sub_menu_title_primary closed">
+                    <a href="javascript:" data-leaf="0" data-father="{{d2.father}}" class="menu_link_primary" title="{{d2.name}}">{{d2.name}}</a>
+                </dt>
+                <dd class="sub_menu_desc_primary closed" style="display:none;">
+                    <ul>
+                        {{each d2.children d3 i3}}
+                        {{if d3.leaf==1 && d3.del_flag!=1}}
+                        <li><a href="javascript:void(0);" data-leaf="1" data-id="{{d3.id}}" data-father="{{d3.father}}" title='{{d3.name}}' class="menu_link_primary no_sub">{{d3.name}}</a></li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </dd>
+            {{/if}}
+            {{/each}}
+            </ul>
+        </dd>
+        {{/if}}
+    {{/each}}
+    </script>
+	<script type="text/javascript">
+        window.Data = {
+            id : "test",
+            list : {
+				"list":[
+					{
+						"id":"mp1418702131",
+						"father":"0",
+						"leaf":0,
+						"name":"开始前必读",
+						"children":[
+							{"id":"test","father":"mp1418702131","leaf":1,"name":"首页","children":[],"expanded":1,"is_online":true},
+							{"id":"","father":"mp1418702131","leaf":1,"name":"更新日志","children":[],"expanded":1,"is_online":true},
+							{"id":"","father":"mp1418702131","leaf":1,"name":"开发者规范","children":[],"expanded":1,"is_online":true},
+							{"id":"","father":"mp1418702131","leaf":1,"name":"公众号接口权限说明","children":[],"expanded":1,"is_online":true},
+							{"id":"","father":"mp1418702131","leaf":1,"name":"全局返回码说明","children":[],"expanded":1,"is_online":true},
+							{"id":"","father":"mp1418702131","leaf":1,"name":"入门指引","children":[],"expanded":1,"is_online":true}
+						],
+						"expanded":1
+					}
+				]
+			}
+        };
+    </script>
+	<script>
+		require.config({
+			paths: {
+				'main': './js/main',
+				'art-template': './js/template-web'
+			}
+		});
+		
+		require(['main']);
+	</script>
+</body>
+</html>

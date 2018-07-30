@@ -1,0 +1,33 @@
+.main_bd {
+    padding: 25px 50px;
+}
+.ddoc-desktop-layout__main__hd {
+    padding: 30px 50px 0;
+}
+.ddoc-desktop-page__title {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.article_box dl, .article_box li, .article_box p {
+    padding-bottom: 14px;
+    font-size: 14px;
+}
+
+.article_box h4 {
+    padding-bottom: 14px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.article_box strong {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.article_box pre {
+    white-space: pre-wrap;
+	word-break: initial;
+}
